@@ -48,8 +48,7 @@
     "Multimedia": {
       "color": "#8aadf4",
       "packages": [
-        { "name": "firefox" },
-        { "name": "shairport-sync" }
+        { "name": "firefox" }
       ]
     },
     "Networking": {
