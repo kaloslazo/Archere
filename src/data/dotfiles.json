@@ -1,0 +1,9 @@
+{
+  "scripts": [
+    { "nerd_icon":  "󰄛 ", "name": "kitty", "color": "#f5bde6" },
+    { "nerd_icon":  "󰖌", "name": "hyprland", "color": "#8bd5ca" },
+    { "nerd_icon":  " ", "name": "waybar", "color": "#eed49f" },
+    { "nerd_icon":  "󰨞 ", "name": "vscode", "color": "#a6da95" },
+    { "nerd_icon":  "󰋜 ", "name": "wofi", "color": "#ee99a0" }
+  ]
+}

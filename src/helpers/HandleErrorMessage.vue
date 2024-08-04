@@ -1,0 +1,56 @@
+<script setup lang="ts">
+import { defineProps, ref } from 'vue';
+
+const props = defineProps<{ message: string }>()
+const isErrorActive = ref(true);
+
+const handleErrorMsg = () => isErrorActive.value = false;
+</script>
+
+<template>
+  <div class="error_container" v-if="isErrorActive">
+    <span class="error_title">
+      <h3>Error</h3>
+      <button class="cross_btn" @click="handleErrorMsg()">X</button>
+    </span>
+    <p>{{ props.message || 'Error message' }}</p>
+  </div>
+</template>
+
+<style>
+.error_container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 2em 2em;
+  padding: 1em 1em;
+  border: 1px solid #e78284;
+  border-radius: 8px;
+  max-width: 350px;
+  background-color: #24273a;
+}
+.error_title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5em;
+}
+.error_title h3 {
+  font-size: 1em;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #ed8796;
+}
+.cross_btn {
+  font-size: 1em;
+  padding: 0.1em 0.5em;
+  border: 1px transparent;
+  background-color: transparent;
+  color: #ed8796;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.cross_btn:hover {
+  opacity: 50%;
+  transition: 100ms ease-in-out;
+}
+</style>

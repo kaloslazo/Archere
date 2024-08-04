@@ -16,9 +16,10 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  z-index: 100;
 }
 .hero-logo img {
-  max-width: 200px;
+  max-width: 150px;
 }
 .hero-logo h1 {
   margin-top: 1em;

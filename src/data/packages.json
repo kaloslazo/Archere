@@ -1,6 +1,7 @@
 {
   "categories": {
     "Development": {
+      "nerd_icon": "",
       "color": "#c6a0f6",
       "packages": [
         { "name": "git" },
@@ -20,6 +21,7 @@
       ]
     },
     "System Utilities": {
+      "nerd_icon": " ",
       "color": "#a6da95",
       "packages": [
         { "name": "htop" },
@@ -46,12 +48,14 @@
       ]
     },
     "Multimedia": {
+      "nerd_icon": " ",
       "color": "#8aadf4",
       "packages": [
         { "name": "firefox" }
       ]
     },
     "Networking": {
+      "nerd_icon": " ",
       "color": "#f5bde6",
       "packages": [
         { "name": "curl" },
@@ -64,6 +68,7 @@
       ]
     }, 
     "Productivity": {
+      "nerd_icon": " ",
       "color": "#eed49f",
       "packages": [
         { "name": "bitwarden" },
@@ -76,6 +81,7 @@
       ]
     },
     "AUR": {
+      "nerd_icon": "󰣇",
       "color": "#ed8796", 
       "packages": [
         { "name": "visual-studio-code-bin" },
