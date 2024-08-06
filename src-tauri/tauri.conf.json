@@ -44,7 +44,9 @@
         "providerShortName": null,
         "signingIdentity": null
       },
-      "resources": [],
+      "resources": [
+        "../src/scripts"
+      ],
       "shortDescription": "",
       "targets": "all",
       "windows": {
