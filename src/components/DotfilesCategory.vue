@@ -3,28 +3,33 @@
     <ul class="container-category">
       <li v-for="script in dotfilesScripts" :key="script.name">
         <button class="btn-category" 
-                :style="{ borderColor: script.color, color: script.color }" 
-                :aria-label="`Script: ${script}`"
-                @click="showDotfilesCategory(script)">
-          <span :style="{padding: '0em 1em'}">{{ script.nerd_icon }}</span>
+                :style="{
+                  '--btn-border-color': script.color,
+                  '--btn-text-color': script.color,
+                  '--btn-bg-color': `${script.color}20`
+                }" 
+                :aria-label="`Script: ${script.name}`"
+                @click="show_dotfiles_category(script.name)">
+          <span :style="{ padding: '0em 1em' }">{{ script.nerd_icon }}</span>
           <span>{{ script.name }}</span>
         </button>
       </li>
     </ul>
   </div>
+  <InfoDotfile v-if="selected_dotfile !== ''" :name="selected_dotfile" @close="selected_dotfile = ''"/>
 </template>
 
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import dotfilesData from '../data/dotfiles.json';
+import InfoDotfile from '../helpers/InfoDotfile.vue';
 
 const dotfiles = ref(dotfilesData.scripts);
-const selectedDotfile = ref(null);
+const selected_dotfile = ref<string>('');
 
-const showDotfilesCategory = (scriptDotfile: any) => selectedDotfile.value = scriptDotfile;
+const show_dotfiles_category = (script_dotfile: any) => selected_dotfile.value = script_dotfile;
 const dotfilesScripts = computed(() => dotfiles.value);
 </script>
-
 
 <style>
 .dotfiles_container {
@@ -40,14 +45,17 @@ const dotfilesScripts = computed(() => dotfiles.value);
   cursor: pointer;
   border-radius: 12px;
   background-color: transparent;
-  border: 2px solid transparent;
-  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  border: 2px solid var(--btn-border-color);
+  color: var(--btn-text-color);
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
   text-transform: capitalize;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .btn-category:hover {
-  background-color: #363a4f;
+  background-color: var(--btn-bg-color);
+  border-color: var(--btn-border-color);
 }
 </style>
