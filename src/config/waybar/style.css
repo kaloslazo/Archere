@@ -1,0 +1,230 @@
+/*
+*
+* Catppuccin Mocha palette
+* Maintainer: rubyowo
+*
+*/
+
+@define-color base   #1e1e2e;
+@define-color mantle #181825;
+@define-color crust  #11111b;
+
+@define-color text     #cdd6f4;
+@define-color subtext0 #a6adc8;
+@define-color subtext1 #bac2de;
+
+@define-color surface0 #313244;
+@define-color surface1 #45475a;
+@define-color surface2 #585b70;
+
+@define-color overlay0 #6c7086;
+@define-color overlay1 #7f849c;
+@define-color overlay2 #9399b2;
+
+@define-color blue      #89b4fa;
+@define-color lavender  #b4befe;
+@define-color sapphire  #74c7ec;
+@define-color sky       #89dceb;
+@define-color teal      #94e2d5;
+@define-color green     #a6e3a1;
+@define-color yellow    #f9e2af;
+@define-color peach     #fab387;
+@define-color maroon    #eba0ac;
+@define-color red       #f38ba8;
+@define-color mauve     #cba6f7;
+@define-color pink      #f5c2e7;
+@define-color flamingo  #f2cdcd;
+@define-color rosewater #f5e0dc;
+
+/* @AUTHOR: Kalos Lazo */
+/* @GITHUB: @kaloslazo */
+
+/* =>> Global */
+* {
+  font-family: "VictorMono NF SemiBold", monospace;
+  font-weight: bold;
+  font-size: 12px;
+  color: @text;
+}
+
+/* =>> Window */
+window#waybar {
+  background-color: @crust;
+  border-radius: 5px;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  /* border: 1px solid @surface1; */
+}
+
+/* =>> Button */
+button {
+  box-shadow: inset 0 -3px transparent;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: inherit;
+  box-shadow: inset 0 -3px #ffffff;
+}
+
+/* =>> General tweaks modules */
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#mpd,
+#workspaces,
+#window,
+#language,
+#tray,
+#custom-pacman,
+#custom-weather {
+  background-color: @base;
+  color: @text;
+  margin: 0.25em;
+  padding: 0 0.5em;
+  border-radius: 5px;
+}
+
+/* =>> Custom */
+#custom-launcher {
+  margin-left: 1em;
+}
+
+/* =>> Each customization */
+#clock {
+  color: @sapphire;
+}
+
+#battery {
+  padding-right: 1.2em;
+  color: @peach;
+}
+#battery.charging,
+#battery.plugged {
+  color: @green;
+}
+#battery.critical:not(.charging) {
+  color: @red;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#cpu {
+  color: @maroon;
+  padding-right: 0.9em;
+}
+
+#memory {
+  color: @lavender;
+  padding-right: 0.9em;
+}
+
+#backlight {
+  color: @yellow;
+}
+
+#network {
+  color: @sky;
+  padding-right: 1.2em;
+}
+#network.disconnected {
+  color: @red;
+}
+
+#pulseaudio {
+  color: @blue;
+}
+#pulseaudio.muted {
+  background-color: #90b1b1;
+  color: #2a5c45;
+}
+
+#wireplumber {
+  background-color: #fff0f5;
+  color: #000000;
+}
+#wireplumber.muted {
+  background-color: #f53c3c;
+}
+
+#custom-media {
+  background-color: #66cc99;
+  color: #2a5c45;
+  min-width: 100px;
+}
+#custom-media.custom-spotify {
+  background-color: #66cc99;
+}
+#custom-media.custom-vlc {
+  background-color: #ffa000;
+}
+
+#temperature {
+  color: @sky;
+}
+#temperature.critical {
+  color: @red;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: @yellow;
+}
+
+#language {
+  color: @blue;
+}
+
+/* =>> Animations */
+@keyframes blink {
+  to {
+    color: #000000;
+  }
+}
+
+/* =>> Workspaces */
+#workspaces {
+  margin-left: 0.5em;
+}
+
+#workspaces button {
+  padding: 0.2em 0.8em;
+  color: @text;
+  background-color: transparent;
+}
+
+#workspaces button.empty {
+  color: @overlay0;
+}
+
+#workspaces button.visible {
+  color: @red;
+}
+
+#workspaces button.active {
+  color: @green;
+}
+
+#workspaces button.urgent {
+  color: @red;
+}

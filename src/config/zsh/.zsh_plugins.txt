@@ -1,0 +1,8 @@
+zsh-users/zsh-completions
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-autosuggestions
+MichaelAquilina/zsh-you-should-use
+ael-code/zsh-colored-man-pages
+momo-lab/zsh-abbrev-alias
+wbingli/zsh-wakatime
+

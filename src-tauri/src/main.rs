@@ -40,6 +40,15 @@ fn install_packages(window: Window, packages: Vec<String>) -> Result<String, Str
 }
 
 #[command]
+fn read_script_contents(script_name: String) -> Result<String, String> {
+    let current_dir = env::current_dir().map_err(|e| e.to_string())?;
+    let script_path = current_dir.join("../src/scripts").join(format!("{}.sh", script_name));
+    let script_path = script_path.canonicalize().map_err(|e| e.to_string())?;
+
+    std::fs::read_to_string(&script_path).map_err(|e| e.to_string())
+}
+
+#[command]
 fn execute_script(script_name: String) -> Result<String, String> {
     let current_dir = env::current_dir().map_err(|e| e.to_string())?;
     let script_path = current_dir.join("../src/scripts").join(format!("{}.sh", script_name));
@@ -66,7 +75,8 @@ fn main() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
             install_packages,
-            execute_script
+            execute_script,
+            read_script_contents
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
