@@ -3,9 +3,9 @@
 <p align="center">
   <a href="#about">About</a> •
   <a href="#usage">Usage</a> •
+  <a href="#installation">Installation</a> •
   <a href="#features">Key Features</a> •
   <a href="#future-plans">Future Plans</a> •
-  <a href="#installation">Installation</a> •
   <a href="#license">License</a>
 </p>
 
@@ -27,24 +27,6 @@ In the video below, you can see the user navigating through different categories
   <img align="center" src="docs/video_preview.gif" alt="Video demonstration of Archere" />
 </p>
 
-<h2 id="features">🎯 Key Features</h2>
-
-- Easy post install experience
-- Customizable with css access
-- Lightweight made with tauri
-- Easy for add/remove packages
-- Install only what you needs
-- External scripts for better archlinux experience
-
-<h2 id="future-plans">💡 Future Plans</h2>
-
-- [ ] Add a dotfiles management section on the home page.
-- [ ] Implement custom error messages in the frontend.
-- [x] Fix Rust errors during pacman installation.
-- [ ] Add a console in the frontend to display installation progress.
-- [ ] Improve sudo permissions handling for each package.
-- [x] Implement Catppuccin palette.
-
 <h2 id="installation">🛠️ Installation</h2>
 
 1. **Clone the repository:**
@@ -62,6 +44,24 @@ npm install
 ```bash
 npm run tauri dev
 ```
+
+<h2 id="features">🎯 Key Features</h2>
+
+- Easy post install experience
+- Customizable with css access
+- Lightweight made with tauri
+- Easy for add/remove packages
+- Install only what you needs
+- External scripts for better archlinux experience
+
+<h2 id="future-plans">💡 Future Plans</h2>
+
+- [x] Add a dotfiles management section on the home page.
+- [x] Implement custom error messages in the frontend.
+- [x] Fix Rust errors during pacman installation.
+- [ ] Add a console in the frontend to display installation progress.
+- [ ] Improve sudo permissions handling for each package.
+- [x] Implement Catppuccin palette.
 
 <h2 id="license">📄 License</h2>
 
