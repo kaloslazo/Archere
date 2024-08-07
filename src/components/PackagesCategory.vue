@@ -2,8 +2,12 @@
   <div class="packages_container">
     <ul class="container-category">
       <li v-for="eachCategory in categories" :key="eachCategory.name">
-        <button class="btn-category" 
-                :style="{ borderColor: eachCategory.color, color: eachCategory.color }" 
+        <button class="btn-category"
+                :style="{
+                  '--btn-border-color': eachCategory.color,
+                  '--btn-text-color': eachCategory.color,
+                  '--btn-bg-color': `${eachCategory.color}20`
+                }" 
                 :aria-label="`Category: ${eachCategory.name}`"
                 @click="showCategoryInfo(eachCategory)">
           <span :style="{padding: '0em 1em'}">{{ eachCategory.nerd_icon }}</span>
@@ -82,13 +86,17 @@ export default {
   cursor: pointer;
   border-radius: 12px;
   background-color: transparent;
-  border: 2px solid transparent;
-  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  border: 2px solid var(--btn-border-color);
+  color: var(--btn-text-color);
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  text-transform: capitalize;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
 }
+
 .btn-category:hover {
-  background-color: #363a4f85;
+  background-color: var(--btn-bg-color);
+  border-color: var(--btn-border-color);
 }
 </style>
