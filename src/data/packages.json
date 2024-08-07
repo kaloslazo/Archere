@@ -44,7 +44,13 @@
         { "name": "pipewire-alsa" },
         { "name": "pipewire-jack" },
         { "name": "pipewire-media-session" },
-        { "name": "openssl" }
+        { "name": "openssl" },
+        { "name": "bat" },
+        { "name": "exa" },
+        { "name": "xclip" },
+        { "name": "grim" },
+        { "name": "slurp" },
+        { "name": "wttrbar" }
       ]
     },
     "Multimedia": {
@@ -77,7 +83,13 @@
         { "name": "neovim" },
         { "name": "gnome-shell-extensions" },
         { "name": "gnome-browser-connector" },
-        { "name": "appmenu-gtk-module" }
+        { "name": "appmenu-gtk-module" },
+        { "name": "wofi" },
+        { "name": "zsh" },
+        { "name": "zsh-autosuggestions" },
+        { "name": "zsh-completions" },
+        { "name": "starship" },
+        { "name": "hyprland" }
       ]
     },
     "AUR": {
@@ -88,7 +100,8 @@
         { "name": "zoom" },
         { "name": "obs studio" },
         { "name": "woeusb" },
-        { "name": "wireshark-git" }
+        { "name": "wireshark-git" },
+        { "name": "wlogout" }
       ]
     }
   }

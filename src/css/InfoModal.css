@@ -88,3 +88,13 @@ hr {
 .info-wrapper h3 {
   text-transform: capitalize;
 }
+
+.pre-wrapper {
+  padding: 1em 1em;
+  margin: 1em 0em;
+  font-size: 1em;
+  background-color: #363a4f;
+  max-height: 225px;
+  overflow-y: scroll;
+  border-radius: 4px;
+}
