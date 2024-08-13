@@ -32,31 +32,44 @@
 /* =>> Global */
 * {
   font-family: "Iosevka Nerd Font", monospace;
-  font-weight: bold;
+  font-weight: 500;
   font-size: 12px;
   color: @text;
 }
 
 /* =>> Window */
 window#waybar {
-  /* background-color: @crust; */
-  background-color: transparent;
-  border-radius: 5px;
+  background-color: rgba(36, 39, 58, 0.8);
   transition-property: background-color;
   transition-duration: 0.5s;
-  /* border: 1px solid @surface1; */
+  /* border-radius: 5px; */
+  /* border: 1px solid @overlay_border; */
+}
+tooltip {
+  background-color: rgba(36, 39, 58, 0.8);
+  border-radius: 5px;
 }
 
 /* =>> Button */
-button {
-  box-shadow: inset 0 -3px transparent;
-  border: none;
-  border-radius: 4px;
+#workspaces {
+  padding-right: 0px;
 }
-
-button:hover {
-  background: inherit;
-  box-shadow: inset 0 -3px #ffffff;
+#workspaces button {
+  padding: 2px;
+  border-bottom: 2px solid transparent;
+}
+#workspaces button.active  {
+  border-bottom: 2px solid @blue;
+  border-radius: 0;
+  margin-top: 0px;
+  transition: all 0.5s ease-in-out;
+}
+#workspaces button.focused {
+  color: @blue;
+}
+#workspaces button:hover {
+  color: @base;
+  background: @blue;
 }
 
 /* =>> General tweaks modules */
@@ -83,107 +96,19 @@ button:hover {
 #custom-pacman,
 #custom-launcher,
 #custom-weather {
-  background-color: @base;
+  background-color: transparent;
   color: @text;
-  margin: 0.25em;
-  padding: 0 0.8em;
-  border-radius: 5px;
-  border: 1px solid @overlay_border;
-}
-
-/* =>> Custom */
-#custom-launcher {
-  color: @mauve;
-  margin-left: 0em;
+  padding: 0 10px;
+  border: 0;
 }
 
 /* =>> Each customization */
-#clock {
-  color: @sapphire;
+#tray {
+  border-radius: 11px;
+  margin-right: 4px;
 }
-
-#battery {
-  padding-right: 1.2em;
-  color: @peach;
-}
-#battery.charging,
-#battery.plugged {
-  color: @green;
-}
-#battery.critical:not(.charging) {
-  color: @red;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: steps(12);
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-#cpu {
-  color: @maroon;
-  padding-right: 0.9em;
-}
-
-#memory {
-  color: @lavender;
-  padding-right: 0.9em;
-}
-
-#backlight {
-  color: @yellow;
-}
-
-#network {
-  color: @sky;
-  padding-right: 1.2em;
-}
-#network.disconnected {
-  color: @red;
-}
-
-#pulseaudio {
-  color: @blue;
-}
-#pulseaudio.muted {
-  color: @red;
-}
-
-#wireplumber {
-  color: @text;
-}
-#wireplumber.muted {
-  background-color: @red;
-}
-
-#custom-media {
-  background-color: #66cc99;
-  color: #2a5c45;
-  min-width: 100px;
-}
-#custom-media.custom-spotify {
-  color: @green;
-}
-#custom-media.custom-vlc {
-  background-color: #ffa000;
-}
-#temperature {
-  color: @sky;
-}
-#temperature.critical {
-  color: @red;
-}
-
 #tray > .passive {
   -gtk-icon-effect: dim;
-}
-
-#tray > .needs-attention {
-  -gtk-icon-effect: highlight;
-  background-color: @yellow;
-}
-
-#language {
-  color: @blue;
 }
 
 /* =>> Animations */
@@ -191,31 +116,4 @@ button:hover {
   to {
     color: #000000;
   }
-}
-
-/* =>> Workspaces */
-#workspaces {
-  margin-left: 0.5em;
-}
-
-#workspaces button {
-  padding: 0em 0.2em;
-  color: @text;
-  background-color: transparent;
-}
-
-#workspaces button.empty {
-  color: @overlay0;
-}
-
-#workspaces button.visible {
-  color: @red;
-}
-
-#workspaces button.active {
-  color: @green;
-}
-
-#workspaces button.urgent {
-  color: @red;
 }
